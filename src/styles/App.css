@@ -89,6 +89,94 @@
   font-weight: bold;
 }
 
+.mint-count {
+  margin: 32px 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: aqua;
+}
+
+.no-rinkeby {
+  color: #ff6fdf;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #ff6fdf;
+  padding: 16px;
+  border-radius: 4px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.open-sea-nft-link {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.open-sea-nft-link a {
+  background: -webkit-linear-gradient(left, darkviolet 30%, deeppink 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.open-sea-nft-link a:hover,
+.open-sea-nft-link a:focus {
+  background: -webkit-linear-gradient(left, deeppink 30%, darkviolet 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mint-level-reached {
+  background: -webkit-linear-gradient(left, #ff0000 30%, #ff6600 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.view-collection {
+	border-top: 3px solid #099fff;
+  border-bottom: 3px solid #0033ff;
+  padding: 16px;
+  margin: 64px auto 32px auto;
+	max-width: 90vw;
+	display: block;
+  background: -webkit-linear-gradient(left, #0033ff 30%, #099fff 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.view-collection:hover,
+.view-collection:focus {
+  background: -webkit-linear-gradient(left, #099fff 30%, #0033ff 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.status {
+  color: white;
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+.miningLoader {
+	display: block;
+	min-height: 150px;
+}
+
 /* KeyFrames */
 @-webkit-keyframes gradient-animation {
   0% {

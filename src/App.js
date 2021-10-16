@@ -2,7 +2,7 @@ import "./styles/App.css";
 import twitterLogo from "./assets/twitter-logo.svg";
 import React, { useEffect, useState, useCallback } from "react";
 import { ethers } from "ethers";
-import myEpicNft from "./utils/myEpicNft.json";
+import LeavesOfGrassRemembrance from "./utils/LeavesOfGrassRemembrance.json";
 import CircleLoader from "react-spinners/CircleLoader";
 
 // Constants
@@ -10,7 +10,7 @@ const TWITTER_HANDLE = "sjfortin";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const LIMIT = 50;
 const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
-const COLLECTION_ON_OPEN_SEA = "squarenft-jbdiucycag";
+const COLLECTION_ON_OPEN_SEA = "squarenft-yxwem3h1yw";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -32,7 +32,7 @@ const App = () => {
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(
           CONTRACT_ADDRESS,
-          myEpicNft.abi,
+          LeavesOfGrassRemembrance.abi,
           signer
         );
         // THIS IS THE MAGIC SAUCE.
@@ -92,7 +92,7 @@ const App = () => {
     const signer = provider.getSigner();
     const connectedContract = new ethers.Contract(
       CONTRACT_ADDRESS,
-      myEpicNft.abi,
+      LeavesOfGrassRemembrance.abi,
       signer
     );
 
@@ -152,7 +152,7 @@ const App = () => {
         const signer = provider.getSigner();
         const connectedContract = new ethers.Contract(
           CONTRACT_ADDRESS,
-          myEpicNft.abi,
+          LeavesOfGrassRemembrance.abi,
           signer
         );
 

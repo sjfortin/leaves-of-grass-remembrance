@@ -43,7 +43,7 @@ const App = () => {
           setOpenSeaNFTLink(
             `https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`
           );
-					alert(
+          alert(
             `Hey there! We've minted your NFT. It may be blank right now. It can take a max of 10 min to show up on OpenSea. Here's the link: https://testnets.opensea.io/assets/${CONTRACT_ADDRESS}/${tokenId.toNumber()}`
           );
         });
@@ -168,7 +168,7 @@ const App = () => {
           let nftTxn = await connectedContract.makeAnEpicNFT();
 
           console.log("Mining...please wait.");
-					setIsPayingGas(false);
+          setIsPayingGas(false);
           setIsMining(true);
           await nftTxn.wait();
 
@@ -223,82 +223,76 @@ const App = () => {
           <p className="sub-text">
             See ever so far, there is limitless space outside of that.
           </p>
-          {isRinkeby ? (
-            <div>
-              {!mintLimitReached && (
-                <div className="mint-count">
-                  <div>
-                    {numberOfMints} out of {LIMIT} leaves of grass claimed.{" "}
-                    <br />
-                    Go forth and claim yours.
-                  </div>
+          <div>
+            {!mintLimitReached && (
+              <div className="mint-count">
+                <div>
+                  {numberOfMints} out of {LIMIT} leaves of grass claimed. <br />
+                  Go forth and claim yours.
                 </div>
-              )}
-              {mintLimitReached && (
-                <div className="mint-level-reached">
-                  Unless the limit is reached. Sorry! The leaves are gone for
-                  the winter.
-                </div>
-              )}
-              {!mintLimitReached && (
-                <>
-                  {currentAccount === "" ? (
-                    <button
-                      onClick={connectWallet}
-                      className="cta-button connect-wallet-button"
-                    >
-                      Connect to Wallet
-                    </button>
-                  ) : (
-                    <>
-                      {isPayingGas && (
-                        <div className="status">
-                          Pay that gas fee to continue forth!
-                        </div>
-                      )}
-                      {isMining && (
-                        <div className="miningLoader">
-                          <CircleLoader
-                            loading={isMining}
-                            size={150}
-                            color="#00FFFF"
-                          />
-                        </div>
-                      )}
-                      {!isMining && !isPayingGas && (
-                        <button
-                          onClick={askContractToMintNft}
-                          className="cta-button connect-wallet-button"
-                        >
-                          Mint your leaves
-                        </button>
-                      )}
-                    </>
-                  )}
-                  {openSeaNFTLink && !isMining && !isPayingGas && (
-                      <div className="open-sea-nft-link">
-                        <div>They are but parts, any thing is but a part.</div>
-                        <div>
-                          {" "}
-                          <a
-                            href={openSeaNFTLink}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Check out your part!
-                          </a>
-                        </div>
+              </div>
+            )}
+            {mintLimitReached && (
+              <div className="mint-level-reached">
+                Unless the limit is reached. Sorry! The leaves are gone for the
+                winter.
+              </div>
+            )}
+            {!mintLimitReached && (
+              <>
+                {currentAccount === "" ? (
+                  <button
+                    onClick={connectWallet}
+                    className="cta-button connect-wallet-button"
+                  >
+                    Connect to Wallet
+                  </button>
+                ) : (
+                  <>
+                    {isPayingGas && (
+                      <div className="status">
+                        Pay that gas fee to continue forth!
                       </div>
                     )}
-                </>
-              )}
-            </div>
-          ) : (
-            <div className="no-rinkeby">
-              Yooooo! You have to connect to Rinkeby to proceed. Refresh the
-              page when you do.
-            </div>
-          )}
+                    {isMining && (
+                      <div className="miningLoader">
+                        <CircleLoader
+                          loading={isMining}
+                          size={150}
+                          color="#00FFFF"
+                        />
+                      </div>
+                    )}
+                    {!isMining && !isPayingGas && isRinkeby && (
+                      <button
+                        onClick={askContractToMintNft}
+                        className="cta-button connect-wallet-button"
+                      >
+                        Mint your leaves
+                      </button>
+                    )}
+                    {!isRinkeby && (
+                      <div className="no-rinkeby">
+                        Yooooo! You have to connect to Rinkeby to proceed.
+                        Refresh the page when you do.
+                      </div>
+                    )}
+                  </>
+                )}
+                {openSeaNFTLink && !isMining && !isPayingGas && (
+                  <div className="open-sea-nft-link">
+                    <div>They are but parts, any thing is but a part.</div>
+                    <div>
+                      {" "}
+                      <a href={openSeaNFTLink} target="_blank" rel="noreferrer">
+                        Check out your part!
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
           <div className="view-collection-container">
             <a
               className="view-collection"
